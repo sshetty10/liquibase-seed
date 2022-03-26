@@ -1,0 +1,60 @@
+{
+    "databaseChangeLog": [
+        {
+            "changeSet": {
+                "id": "sp-gym-changelog-2.1:1",
+                "author": "someone",
+                "changes": [
+                    {
+                        "createTable": {
+                            "columns": [
+                                {
+                                    "column": {
+                                        "name": "age",
+                                        "type": "INT UNSIGNED"
+                                    }
+                                },
+                                {
+                                    "column": {
+                                        "name": "city",
+                                        "type": "VARCHAR(255)"
+                                    }
+                                },
+                                {
+                                    "column": {
+                                        "name": "name",
+                                        "type": "VARCHAR(255)"
+                                    }
+                                }
+                            ],
+                            "tableName": "test",
+                            "schemaName": "gym"
+                        }
+                    }
+                ],
+                "rollback": [
+                    {
+                        "dropTable": {
+                            "cascadeConstraints":  true,
+                            "tableName": "test",
+                            "schemaName":  "gym"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "changeSet": {
+                "id": "sp-gym-changelog-2.1:3",
+                "author": "sshetty",
+                "changes": [
+                    {
+                        "tagDatabase": {
+                            "tag": "2.1"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

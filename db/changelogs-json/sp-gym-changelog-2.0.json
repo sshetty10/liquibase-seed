@@ -1,0 +1,103 @@
+{
+    "databaseChangeLog": [
+        {
+            "changeSet": {
+                "id": "sp-gym-changelog-2.0:1",
+                "author": "someone",
+                "changes": [
+                    {
+                        "createTable": {
+                            "columns": [
+                                {
+                                    "column": {
+                                        "name": "age",
+                                        "type": "INT UNSIGNED"
+                                    }
+                                },
+                                {
+                                    "column": {
+                                        "name": "city",
+                                        "type": "VARCHAR(255)"
+                                    }
+                                },
+                                {
+                                    "column": {
+                                        "name": "name",
+                                        "type": "VARCHAR(255)"
+                                    }
+                                }
+                            ],
+                            "tableName": "trainers",
+                            "schemaName": "gym"
+                        }
+                    }
+                ],
+                "rollback": [
+                    {
+                        "dropTable": {
+                            "cascadeConstraints":  true,
+                            "tableName": "trainers",
+                            "schemaName":  "gym"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "changeSet": {
+                "id": "sp-gym-changelog-2.0:2",
+                "author": "sshetty",
+                "changes": [
+                    {
+                        "createTable": {
+                            "columns": [
+                                {
+                                    "column": {
+                                        "name": "age",
+                                        "type": "INT UNSIGNED"
+                                    }
+                                },
+                                {
+                                    "column": {
+                                        "name": "city",
+                                        "type": "VARCHAR(255)"
+                                    }
+                                },
+                                {
+                                    "column": {
+                                        "name": "name",
+                                        "type": "VARCHAR(255)"
+                                    }
+                                }
+                            ],
+                            "tableName": "students",
+                            "schemaName": "gym"
+                        }
+                    }
+                ],
+                "rollback": [
+                    {
+                        "dropTable": {
+                            "cascadeConstraints":  true,
+                            "tableName": "students",
+                            "schemaName":  "gym"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "changeSet": {
+                "id": "sp-gym-changelog-2.0:3",
+                "author": "sshetty",
+                "changes": [
+                    {
+                        "tagDatabase": {
+                            "tag": "2.0"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
